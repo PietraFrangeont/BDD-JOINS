@@ -3,19 +3,15 @@
     r.pontos AS pontos
 FROM resultados_corrida r
 RIGHT JOIN pilotos p
-ON r.piloto_id = p.id
-AND r.gp = 'GP de Interlagos';
+    ON r.piloto_id = p.id
+    AND r.gp = 'GP de Interlagos';
 
 2- SELECT
     fm.nome AS fabricante,
-    COUNT(p.id) AS quantidade_pilotos
-FROM pilotos p
-RIGHT JOIN equipes e
-    ON p.equipe_id = e.id
+    e.nome AS equipe
+FROM equipes e
 RIGHT JOIN fabricantes_motor fm
-    ON e.motor_id = fm.id
-GROUP BY fm.id, fm.nome
-ORDER BY quantidade_pilotos DESC;
+    ON e.motor_id = fm.id;
 
 3- SELECT
     e.id,
@@ -26,8 +22,8 @@ RIGHT JOIN equipes e
     ON fm.id = e.motor_id
 WHERE fm.id IS NULL;
 
-4a- Retorna os fabricantes, as equipes e os pilotos relacionados. O RIGHT JOIN garante que todos os pilotos sejam exibidos, mesmo aqueles que não possuem equipe cadastrada ou cuja equipe não possui fabricante válido. Nesses casos, os dados correspondentes aparecem como NULL.
+4a- Mostra os fabricantes, as equipes e os pilotos relacionados. Todos os pilotos aparecem, mesmo aqueles que não possuem equipe ou fabricante relacionado. Os campos sem correspondência aparecem como NULL.
 
-4b- Retorna os pilotos que possuem resultados registrados no GP de Interlagos, mostrando o nome, o Grande Prêmio e os pontos conquistados. Apesar do RIGHT JOIN preservar todos os pilotos inicialmente, o WHERE elimina aqueles que não possuem resultado em Interlagos, pois o campo GP fica NULL.
+4b- Mostra os pilotos que possuem resultados registrados no GP de Interlagos, apresentando o nome, o Grande Prêmio e os pontos conquistados. O WHERE elimina os pilotos que não possuem resultado nessa etapa.
 
-4c- Retorna as equipes que não possuem nenhum piloto cadastrado. O RIGHT JOIN garante que todas as equipes sejam consideradas, e o WHERE seleciona somente aquelas sem pilotos relacionados.
+4c- Mostra as equipes que não possuem nenhum piloto cadastrado. O RIGHT JOIN mantém todas as equipes e o WHERE seleciona aquelas que não possuem pilotos relacionados.
