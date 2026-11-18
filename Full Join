@@ -1,1 +1,8 @@
+1 - Full join
 
+2 - SELECT *
+    FROM A
+    FULL JOIN B
+    ON A.id = B.id;
+
+3 - Falso, o  full join  inclui todas as linhas, mesmo as que não possuem correspondência, os valores ausentes aparecem como NULL.
