@@ -1,1 +1,23 @@
-twerreyrturjghkhgfk
+1a - SELECT COUNT(*) AS total_jogadores
+     FROM jogadores;
+
+1b - SELECT DISTINCT clube
+     FROM jogadores;
+
+2a - SELECT MAX(gols) AS maior_numero_gols
+     FROM jogadores;
+
+2b - SELECT MIN(assistencias) AS menor_numero_assistencias
+     FROM jogadores;
+
+3a - SELECT SUM(valor_milhoes) AS valor_total
+     FROM jogadores;
+
+3b - SELECT AVG(valor_milhoes) AS valor_medio
+     FROM jogadores;
+
+3c - O valor total (€64,5 milhões) é a soma de todos os jogadores. O valor médio (€12,9 milhões) é o total dividido por 5 e mostra quanto vale um jogador típico.
+
+4a - Acima da média: €20 milhões contra €12,9 milhões (cerca de 55% a mais).
+
+4b - Não. A média e o máximo mostram o mercado em geral, não o jogador específico (na tabela, Flaco Lopez vale €30 milhões e Patrick de Paula, €2,5 milhões). Eles ajudariam no desempenho (gols e assistências) e idade e tempo de contrato
