@@ -1,1 +1,11 @@
+1 - Ele combina cada registro da primeira tabela com todos os registros da segunda tabela. É o chamado produto cartesiano: todas as combinações possíveis entre as linhas das duas tabelas
 
+2 - Não, o cross join não filtra nem relaciona as tabelas por uma coluna em comum, ele simplesmente combina todas as linhas com todas. Por isso não existe condição de junção ON
+
+3 - Retorna 6 linhas (2 × 3 = 6)
+
+4 - SELECT alunos.nome, cursos.curso
+    FROM alunos
+    CROSS JOIN cursos;
+
+5 - Retorna 4 linhas porque a tabela alunos tem 2 registros e a tabela turnos tem 2 registros, e o cross join gera todas as combinações (2 × 2 = 4)
