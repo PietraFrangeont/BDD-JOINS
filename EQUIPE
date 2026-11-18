@@ -1,1 +1,16 @@
+1 - > N DE GOLS
+2 - < N ASSISTENCIAS
+3 - MEDIA GOLS
 
+1 - SELECT MAX(gols) 
+    AS maior_gols
+    FROM jogadores;
+    R = 25 gols (CR7).
+
+2 - SELECT MIN(assistencias) 
+    AS menor_assistencias 
+    FROM jogadores;
+    R = 2 assistências (Patrick de Paula).
+
+3 - SELECT AVG(gols) AS media_gols FROM jogadores;
+    r = 14,2 gols.
