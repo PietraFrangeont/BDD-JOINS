@@ -4,12 +4,12 @@ A)
    ORDER BY Valor DESC;
 
 B)
-   SELECT Categoria, AVG(Valor) AS media_valor
+   SELECT Categoria, AVG(Valor) 
    FROM vendas
    GROUP BY Categoria;
 
 C)
-  SELECT Categoria, AVG(Valor) AS media_valor
+  SELECT Categoria, AVG(Valor)
   FROM vendas
   GROUP BY Categoria
   HAVING AVG(Valor) > 200;
