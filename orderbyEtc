@@ -1,0 +1,20 @@
+A) 
+   SELECT *
+   FROM vendas
+   ORDER BY Valor DESC;
+
+B)
+   SELECT Produto, AVG(Valor) AS media_valor
+   FROM vendas
+   GROUP BY Produto;
+
+C)
+  SELECT Produto, AVG(Valor) AS media_valor
+  FROM vendas
+  GROUP BY Produto
+  HAVING AVG(Valor) > 200;
+
+D) 
+  SELECT Produto, Valor
+  FROM vendas
+  WHERE Valor > (SELECT AVG(Valor) FROM vendas);
