@@ -1,0 +1,35 @@
+1)
+ SELECT c.nome
+ FROM clientes c
+ WHERE EXISTS (SELECT 1
+              FROM pedidos p
+              WHERE p.id_cliente = c.id);
+
+2)
+  SELECT c.nome
+  FROM clientes c
+  WHERE NOT EXISTS (SELECT 1
+                  FROM pedidos p
+                  WHERE p.id_cliente = c.id);
+
+3)
+  SELECT nome
+  FROM clientes
+  WHERE idade > ALL (SELECT idade FROM clientes WHERE cidade = 'Curitiba');
+
+4)
+  SELECT nome
+  FROM clientes
+  WHERE idade > SOME (SELECT idade FROM clientes WHERE cidade = 'Foz');
+
+5)
+  SELECT nome
+  FROM clientes
+  WHERE cidade IN (SELECT cidade
+                 FROM clientes
+                 WHERE cidade = 'Foz' OR cidade = 'Curitiba');
+
+6)
+  SELECT nome
+  FROM clientes
+  WHERE id NOT IN (SELECT id_cliente FROM pedidos);
